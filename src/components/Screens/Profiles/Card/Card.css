@@ -1,0 +1,28 @@
+.card {
+    padding: 1rem;
+    color: white;
+    height: 100%;
+}
+
+.card .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card .header button {
+    padding: .3rem .5rem;
+    font-weight: bold;
+}
+
+.card .header button:hover {
+    background: yellow;
+}
+
+.card .card-content {
+    padding: 1rem;
+    display: grid;
+    place-items: center;
+    height: 100%;
+}

@@ -1,25 +1,64 @@
-import logo from './logo.svg';
 import './App.css';
+import Hero from './components/Hero/Hero';
+import Navbar from './components/Navbar/Navbar';
+import Results from './components/Screens/Results/Results';
+import Profiles from './components/Screens/Profiles/Profiles';
+import Network from './components/Screens/Network/Network';
+import Resources from './components/Screens/Resources/Resources';
+import About from './components/Screens/About/About';
+import Contact from './components/Screens/Contact/Contact';
+import { Outlet, Route, Routes } from "react-router-dom";
+import Admin from './components/Admin/Admin';
 
-function App() {
+export default function App(props) {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+        <Routes>
+          <Route path='/' element={<RootLayout />}>
+            <Route index element={<Hero />} />
+            <Route path='/results' element={<Results />} />
+            <Route path='/profiles' element={<Profiles />} />
+            <Route path='/network' element={<Network />} />
+            <Route path='/resources' element={<Resources />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+          </Route>
+          <Route path='/admin' element={<AdminLayout />}>
+            <Route index element={<Admin />} />
+          </Route>
+
+          <Route path='*' element={<NotFound />} />
+          
+        </Routes>
+    
     </div>
   );
 }
 
-export default App;
+const RootLayout = () => {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+    </>
+  )
+}
+
+const AdminLayout = () => {
+  return (
+    <>
+      <Outlet />
+    </>
+  )
+}
+
+const NotFound = () => {
+  return (
+    <>
+      <h1>404 - Page Not Found</h1>
+      {/* Add your custom error page content here */}
+    </>
+  )
+}

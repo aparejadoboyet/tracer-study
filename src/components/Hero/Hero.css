@@ -1,0 +1,147 @@
+.hero {
+    height: 100vh;
+    width: 100vw;
+    padding: 6rem 1rem 1rem;
+}
+
+.hero * {
+    /* border: 1px dotted red; */
+}
+
+.hero .wrapper {
+    height: 100%;
+}
+
+.hero .wrapper .intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.hero .wrapper .intro-content {
+    width: 50%;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.hero .wrapper .intro .intro-content span:first-child {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4C3A51;
+}
+
+.hero .wrapper .intro .intro-content span:nth-of-type(2) {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #4C3A51;
+}
+
+.hero .wrapper .intro .intro-content span:nth-of-type(3) {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #B25068;
+    text-transsurvey: uppercase;
+}   
+
+.hero .wrapper .intro .intro-content span:nth-of-type(4) {
+    color: #774360;
+    /* filter: opacity(.6); */
+    letter-spacing: 1px;
+    padding-right: 2rem;
+    font-size: 1rem;
+}
+
+.hero .wrapper .intro-pic {
+    background: red;
+    width: 50%;
+    height: 100%;
+}
+
+/* Bottom */
+
+.hero .wrapper-bottom {
+    height: 100vh;
+    padding-top: 6rem;
+}
+
+.hero .wrapper-bottom .intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem;
+    height: 100%;
+    gap: 1rem;
+}
+
+.hero .wrapper-bottom .intro-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;   
+    gap: .2rem;
+}
+
+.hero .wrapper-bottom .intro .intro-content span:first-child {
+    font-size: 1.5rem;
+    color: #4C3A51;
+    text-align: left;
+}
+
+.hero .wrapper-bottom .intro .intro-content span:nth-of-type(2) {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #B25068;
+    text-transform: uppercase;
+}   
+
+.hero .wrapper-bottom .intro .intro-content span:nth-of-type(3) {
+    color: #774360;
+    /* filter: opacity(.6); */
+    letter-spacing: 1px;
+    padding: 0 5rem;
+    font-size: 1rem;
+}
+
+.hero .wrapper-bottom .intro-pic {
+    background: red;
+    width: 50%;
+    height: 100%;
+}
+
+.hero .wrapper-bottom .intro .btn {
+    height: 4rem;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.hero .wrapper-bottom .intro .btn .survey-btn {
+    margin-top: 2rem;
+    width: 8rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    transition: all ease-in-out .1s;
+    border: 3px solid #4C3A51;
+    background: white;
+    color: #774360;
+    border-radius: 10px;
+}
+
+.hero .wrapper-bottom .intro .btn .survey-btn:hover {
+    cursor: pointer;
+    height: 3rem;
+    font-size: 1.3rem;
+    width: 10rem;
+    border: 3px solid white;
+    color: white;
+    background: #4C3A51;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}

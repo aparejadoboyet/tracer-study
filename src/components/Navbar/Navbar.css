@@ -1,0 +1,179 @@
+.navbar {
+    background-image: linear-gradient(to right, #E7AB79, #B25068, #774360, #4C3A51);
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    overflow: hidden;
+    z-index: 99;
+    align-items: center;
+    color: white;
+    position: fixed;
+    width: 100vw;
+}
+
+.navbar .logo a{
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+}
+
+.navbar .logo a .logo-pic:hover {
+    cursor: pointer;
+    -webkit-filter: drop-shadow(3px 3px 10px #222222);
+    filter: drop-shadow(3px 3px 10px #222222);
+    transition: all ease-out .2s;
+}
+
+.nav-menu ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav-links {
+    font-size: 1rem;
+    padding: .2rem 0;
+    position: relative;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-links::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #E7AB79;
+    left:0;
+    bottom: 0;
+    transition: all 0.2s ease;
+    
+}
+
+.nav-links:hover::after {
+    width: 102%;
+}
+
+.nav-links:hover {
+    cursor: pointer;
+    color: #E7AB79;
+}
+
+.link-active {
+    color: #E7AB79;
+}
+
+.link-active::after{
+    width: 102%;
+}
+
+/* BURGER */
+.nav-menu {
+    position: relative;
+}
+
+.burger {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    right: 30px;
+}
+
+.burger *{
+    background: white;
+    height: 3px;
+    width: 30px;
+}
+
+.navbar .overlay {
+    opacity: none;
+    display: none;
+    transition: all .5s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+
+    .navbar .overlay-active {
+        pointer-events: none; 
+        opacity: 1;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        pointer-events: fill;
+        width: 100%;
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        z-index: 1;
+    }
+
+    .navbar .burger {
+        visibility: visible;
+        position: absolute;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    .nav-menu {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        width: 20rem;
+        padding: 3.5rem 0 2rem 2rem;
+        right: -520px;
+        top: 10px;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        transition: all ease 0.3s;
+    }
+    
+    .navbar {
+        overflow: visible;
+    }
+
+    .nav-menu ul {
+        /* visibility: hidden; */
+        flex-direction: column;
+        gap: 2rem;;
+        align-items: flex-start;
+    }
+
+    .nav-menu-active { 
+        right: 10px;
+        opacity: 1;
+        z-index: 2;
+    }
+
+    .burger *, .burger-active * {
+        transition: all 0.3s ease;
+    }
+
+    .burger-active .line3{
+        display: none;
+    }
+
+    .burger-active .line1 {
+        position: absolute;
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+
+    .burger-active .line2 {
+        transform: rotate(-45deg);
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    
+    .nav-menu {
+        width: 95vw;
+        height: 28rem;
+    }
+
+}
