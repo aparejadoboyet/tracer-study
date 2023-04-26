@@ -70,9 +70,6 @@ function Navbar() {
                     <Link className={activeLink == '/network' ? 'nav-links link-active' : 'nav-links'} to='/network' onMouseEnter={()=>handleLinkMouseEnter('/network')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>Network</Link>
                 </li>
                 <li>
-                    <Link className={activeLink == '/resources' ? 'nav-links link-active' : 'nav-links'} to='/resources' onMouseEnter={()=>handleLinkMouseEnter('/resources')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>Resources</Link>
-                </li>
-                <li>
                     <Link className={activeLink == '/about' ? 'nav-links link-active' : 'nav-links'} to='/about' onMouseEnter={()=>handleLinkMouseEnter('/about')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>About Us</Link>
                 </li>
                 <li>

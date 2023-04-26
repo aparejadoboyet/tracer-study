@@ -1,7 +1,26 @@
 .results {
     height: 100vh;
     width: 100vw;
-    display: grid;
-    place-items: center;
-    font-weight: bolder;
+    padding: 6rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.results .header h3{
+    font-weight: normal;
+}
+
+.results .content {
+    /* background: red; */
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.chart-1 {    
+    flex-basis: 50%;
 }

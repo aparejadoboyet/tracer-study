@@ -28,7 +28,7 @@ function Hero() {
               <span>Osmeña Colleges</span><br/>
               <span>Computer Science Department</span><br/>
               <span>Tracer Study</span><br/>
-              <span>Welcome to the Alumni Tracer Study by Group 20! Our Dean, Engr. Violeta Monticalvo, inspired this study to gather invaluable feedback from our esteemed batch of alumni covering from School Year 2020 to 2022.</span>
+              <span>Welcome to the Alumni Tracer Study by Group 20! Our Dean, Engr. Violeta Monticalvo, inspired this study to gather invaluable feedback from our esteemed batch of alumni covering School Year 2022.</span>
             </div>
             <div className="intro-pic">
               <img src="" alt="" srcSet="" />
