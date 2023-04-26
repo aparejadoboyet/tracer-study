@@ -1,18 +1,25 @@
 import React, { useState } from 'react'
 import './Hero.css'
-import { useNavigate } from 'react-router-dom'
+import Form from '../Form/Form'
 
 function Hero() {
 
-  const navigate = useNavigate();
   const [modal, setModal] = useState(false);
 
   const handleClick = () => {
-    navigate('/network');
-  };
+    setModal(!modal)
+  }
+
+  const handleClose = () => {
+    setModal(false);
+  }
 
   return (
     <div className="hero">
+
+      {modal  && (
+        <Form onClose={handleClose} />
+      )}
         
         <div className="wrapper">
           {/* Ñ ñ */}
@@ -42,7 +49,9 @@ function Hero() {
               <span>Alumnus</span><br/>
               <span><strong>Your voice matters!</strong><br/> By participating in this survey, you can help shape the future of our Computer Science Department and contribute to the success of our fellow alumni.</span>
               <div className="btn">
-                <button className="survey-btn" onClick={handleClick}>Start Survey</button>
+                <button className="survey-btn" onClick={handleClick}>
+                  Start Survey
+                </button>
               </div>
             </div>
           </div>

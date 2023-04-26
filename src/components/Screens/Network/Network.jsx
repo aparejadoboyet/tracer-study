@@ -1,16 +1,17 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState} from 'react'
 import './Network.css'
-import { useLocation } from 'react-router-dom';
+import Form from '../../Form/Form';
 
 function Network() {
 
-  const location = useLocation();
-  location.state = false;
-  const [modal, setModal] = useState(location.state);
-  console.log(location.state)
-  const handleClick = () =>{
-    location.state = !location.state
-    console.log(location.state)
+  const [modal, setModal] = useState(false);
+
+  const handleClick = () => {
+    setModal(!modal)
+  }
+
+  const handleClose = () => {
+    setModal(false);
   }
 
   return (
@@ -18,13 +19,7 @@ function Network() {
     <div className="network">
 
       {modal  && (
-            <div className="modal-overlay">
-              <div className='modal'>  
-                <div className="form">
-                  <button className="btn-close" onClick={handleClick}>Close</button>
-                  FORM MODAL</div>
-              </div>
-            </div>
+            <Form onClose={handleClose} />
           )}
 
       <div className="header">

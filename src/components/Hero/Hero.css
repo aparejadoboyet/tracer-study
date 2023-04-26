@@ -145,3 +145,54 @@
     background: #4C3A51;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
+
+/* MODAL */
+
+.hero .modal-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+}
+
+.hero .modal{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.hero .modal .form {
+    background-color: white;
+    height: 80%;
+    width: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.hero .modal .form .btn-close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all ease-in-out .1s;
+    border: 2px solid #4C3A51;
+    background: white;
+    color: #774360;
+}
+
+.hero .modal .form .btn-close:hover{
+    cursor: pointer;
+    border: 2px solid white;
+    color: white;
+    background: #4C3A51;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}

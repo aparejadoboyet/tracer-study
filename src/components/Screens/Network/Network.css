@@ -39,6 +39,8 @@
     width: 30%;
 }
 
+/* MODAL */
+
 .network .modal-overlay {
     position: absolute;
     width: 100vw;
