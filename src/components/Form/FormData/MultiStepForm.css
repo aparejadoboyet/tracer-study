@@ -1,0 +1,25 @@
+.form * {
+    border: 1px dotted red;
+}
+
+.form {
+    padding: 1rem;
+}
+
+.form .form-container {
+    width: 100%;
+    height: 100%;
+}
+
+.form .form-container .footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: .5rem;
+}
+
+.form .form-container .footer button{
+    height: 2rem;
+    width: 4.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
