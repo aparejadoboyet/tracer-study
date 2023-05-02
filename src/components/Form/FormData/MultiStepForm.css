@@ -1,5 +1,5 @@
 .form * {
-    border: 1px dotted red;
+    /* border: 1px dotted red; */
 }
 
 .form {
@@ -9,6 +9,18 @@
 .form .form-container {
     width: 100%;
     height: 100%;
+}
+
+.form .form-container .heading {
+    text-align: center;
+    padding: 1rem;
+}
+
+.form .form-container .content {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
 }
 
 .form .form-container .footer {
@@ -23,3 +35,43 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+
+.userDetails form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+    padding: 2rem 5rem;
+}
+
+.userDetails form .field {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}
+
+.userDetails form .field input{
+    height: 2rem;
+    padding: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.userDetails form .field input::placeholder{
+    font-weight: normal;
+    text-transform: none;
+}
+
+.userDetails form .status {
+    /* width: 110%; */
+} 
+
+.userDetails form .status label {
+    /* border: 1px dotted red; */
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+} 

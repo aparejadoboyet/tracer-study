@@ -14,10 +14,10 @@ const MultiStepForm = () => {
     completed.Heading
   ];
 
-  const formDisplay = () => {
-    if ( step === 0 ) return <UserDetails />;
-    if ( step === 1 ) return <FirstForm />;
-    if ( step === 2 ) return completed.Content;
+  const formComponents = {
+    0 : <UserDetails />,
+    1 : <FirstForm />,
+    2 : completed.Content
   }
 
   return (
@@ -29,9 +29,9 @@ const MultiStepForm = () => {
           <div className="heading">
             <h1>{FormHeading[step]}</h1>
           </div>
-          
+
           <div className="content">
-            {formDisplay()}
+            {formComponents[step]}
           </div>
 
           <div className="footer">
