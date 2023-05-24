@@ -1,3 +1,21 @@
 .app {
     background-image: linear-gradient(to right, #870000, #190a05);
 }
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .content-wrap {
+    flex: 1;
+  }
+  
+  /* .content {
+    padding-bottom: 3rem;
+  } */
+  
+  .Footer {
+    margin-top: auto;
+  }

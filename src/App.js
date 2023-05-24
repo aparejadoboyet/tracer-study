@@ -8,12 +8,13 @@ import About from './components/Screens/About/About';
 import Contact from './components/Screens/Contact/Contact';
 import { Outlet, Route, Routes } from "react-router-dom";
 import Admin from './components/Admin/Admin';
+import Footer from './components/Footer/Footer';
 
 export default function App(props) {
 
   return (
     <div className="App">
-      
+      <div className='content-wrap'>
         <Routes>
           <Route path='/' element={<RootLayout />}>
             <Route index element={<Hero />} />
@@ -30,7 +31,8 @@ export default function App(props) {
           <Route path='*' element={<NotFound />} />
           
         </Routes>
-    
+      </div>
+      <Footer />
     </div>
   );
 }
@@ -39,7 +41,9 @@ const RootLayout = () => {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <div className='content'>
+        <Outlet />
+      </div>
     </>
   )
 }
@@ -47,7 +51,9 @@ const RootLayout = () => {
 const AdminLayout = () => {
   return (
     <>
-      <Outlet />
+      <div className='content'>
+        <Outlet />
+      </div>
     </>
   )
 }
