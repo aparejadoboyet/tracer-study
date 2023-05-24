@@ -19,13 +19,13 @@
     padding: 1rem;
 }
 
-.form .form-container .footer {
+.form .form-container .form-footer {
     display: flex;
     justify-content: space-evenly;
     padding: .5rem;
 }
 
-.form .form-container .footer button{
+.form .form-container .form-footer button{
     height: 2rem;
     width: 4.5rem;
     font-weight: bold;

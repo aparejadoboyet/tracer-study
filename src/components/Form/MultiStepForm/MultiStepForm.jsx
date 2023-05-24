@@ -34,9 +34,13 @@ const MultiStepForm = ({onClose}) => {
             {formComponents[step]}
           </div>
 
-          <div className="footer">
+          <div className="form-footer">
             {(step !== 0 && step !== FormHeading.length-1) &&
-              <button onClick={()=>setStep(i=>i-1)}>PREV</button>
+              <button 
+                onClick = {
+                  () => setStep( i => i - 1 )
+                }
+              > PREV </button>
             }
             {(step!==FormHeading.length && step!==FormHeading.length-1) &&
               <button onClick={()=>setStep(i=>i+1)}>{step === FormHeading.length - 2 ? 'FINISH':'NEXT'}</button>

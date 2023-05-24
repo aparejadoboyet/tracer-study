@@ -41,7 +41,7 @@
     font-size: 3rem;
     font-weight: 700;
     color: #B25068;
-    text-transsurvey: uppercase;
+    text-transform: uppercase;
 }   
 
 .hero .wrapper .intro .intro-content span:nth-of-type(4) {
