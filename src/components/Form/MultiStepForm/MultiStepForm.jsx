@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import './MultiStepForm.css'
-import { completed } from './Completed';
-import UserDetails from './UserDetails';
-import FirstForm from './FirstForm';
+import { completed } from '../FormData/Completed';
+import UserDetails from '../FormData/UserDetails';
+import FirstForm from '../FormData/FirstForm';
 
-const MultiStepForm = () => {
+const MultiStepForm = ({onClose}) => {
 
   const [ step, setStep ] = useState(0);
 
@@ -35,11 +35,14 @@ const MultiStepForm = () => {
           </div>
 
           <div className="footer">
-            {(step != 0 && step != FormHeading.length-1) &&
+            {(step !== 0 && step !== FormHeading.length-1) &&
               <button onClick={()=>setStep(i=>i-1)}>PREV</button>
             }
-            {(step!=FormHeading.length && step!=FormHeading.length-1) &&
-              <button onClick={()=>setStep(i=>i+1)}>{step == FormHeading.length - 2 ? 'FINISH':'NEXT'}</button>
+            {(step!==FormHeading.length && step!==FormHeading.length-1) &&
+              <button onClick={()=>setStep(i=>i+1)}>{step === FormHeading.length - 2 ? 'FINISH':'NEXT'}</button>
+            }
+            {step === FormHeading.length-1 &&
+              <button onClick={()=>onClose()}>Close</button>
             }
           </div>
 
