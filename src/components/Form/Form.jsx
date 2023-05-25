@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Form.css'
 import { agreement } from './FormData/Agreement';
 import MultiStepForm from './MultiStepForm/MultiStepForm';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Form = ({onClose}) => {
 
@@ -21,9 +22,7 @@ const Form = ({onClose}) => {
     return (
        <>
         <div className="modal-overlay">
-            <div className='modal'>  
                 {agreementAccepted ? <MultiStepForm onClose = {onClose} /> : agreementSection}
-            </div>
         </div>
        </>
     )

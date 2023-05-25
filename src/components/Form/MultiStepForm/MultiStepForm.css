@@ -1,69 +1,37 @@
-.form {
-    padding: 1rem;
+/* .form {
+    background: white;
+    padding: 2rem;
+    height: 100%;
+    width: 100%;
 }
 
 .form .form-container {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     height: 100%;
+    width: 100%;
+    padding: 1rem;
 }
 
-.form .form-container .heading {
-    text-align: center;
-    padding: 1rem;
+.form .form-container .progressbar {
+    width: 100%;
 }
 
 .form .form-container .content {
-    width: 100%;
-    display: grid;
-    place-items: center;
-    padding: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    overflow-y: scroll;
 }
 
 .form .form-container .form-footer {
     display: flex;
-    justify-content: space-evenly;
-    padding: .5rem;
-}
-
-.form .form-container .form-footer button{
-    height: 2rem;
-    width: 4.5rem;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-
-.userDetails form {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    align-items: center;
-    padding: 2rem 5rem;
-}
-
-.userDetails form .field {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    align-items: center;
-}
+    justify-content: space-evenly;
+} */
 
-.userDetails form .field input{
-    height: 2rem;
-    padding: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.userDetails form .field input::placeholder{
-    font-weight: normal;
-    text-transform: none;
-}
-
-.userDetails form .status label {
-    /* border: 1px dotted red; */
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-} 
+/* .form .form-footer .btn-outline-primary, .form .form-footer .btn-outline-success {
+    padding: .5rem 2rem;
+    font-weight: 600;
+} */
