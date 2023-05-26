@@ -1,26 +1,26 @@
-.card {
+.card-component {
     padding: 1rem;
     /* color: white; */
     height: 100%;
 }
 
-.card .header {
+.card-component .header {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
-.card .header button {
+.card-component .header button {
     padding: .3rem .5rem;
     font-weight: bold;
 }
 
-.card .header button:hover {
+.card-component .header button:hover {
     background: yellow;
 }
 
-.card .card-content {
+.card-component .card-content {
     padding: 1rem;
     display: grid;
     place-items: center;

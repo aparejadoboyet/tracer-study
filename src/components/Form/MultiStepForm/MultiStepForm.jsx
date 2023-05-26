@@ -13,14 +13,16 @@ const MultiStepForm = ({onClose}) => {
 
     // <div className="form">
 
-      <div className="form-container p-3 card w-100 h-100" style={{maxWidth:'860px'}}>
+      <div className="form-container card mh-100" style={{minHeight: 'min-content'}}>
 
         <div className="progressbar card-header">
           <MultiStepProgressBar step={step} />
         </div>
-        <div className="content card-body fw-bold d-flex align-items-center px-5 justify-content-center overflow-auto">
+
+        <div className="content card-body overflow-auto p-md-10" style={{minHeight: '100%'}}>
           <FormStep step={step} list={question} />
         </div>
+
         <div className="form-footer card-footer d-flex justify-content-evenly align-items-center w-100">
           { step !== 0 &&
             <Button className='px-3 fw-bold' variant='outline-primary' size='sm' 

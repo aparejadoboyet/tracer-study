@@ -18,7 +18,7 @@ export const Card = ({batch, onClose}) => {
 
   return (
 
-    <div className='card'>
+    <div className='card-component'>
       
       <div className="header">
         <h4>{batchData}</h4>

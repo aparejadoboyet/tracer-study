@@ -21,13 +21,17 @@
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    height: max-content;
+    min-height: min-content;
+    max-height: 100%;
+    text-align: center;
 }
 
 .modal-overlay .agreement p {
     text-align: justify;
     padding: 1rem;
     font-size: .9rem;
+    height: 100%;
+    overflow-y: scroll;
 }
 
 .modal-overlay .agreement .buttons {
