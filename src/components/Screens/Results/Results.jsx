@@ -39,7 +39,7 @@ function Results() {
 
         <div className="content">
 
-          <div className="chart-1">
+          <div className="chart 1">
             <h5 className="title">Chart 1</h5>
             <div className="row">
               <div className="col-4">
@@ -53,7 +53,7 @@ function Results() {
             </div>
           </div>
 
-          <div className="chart-2">
+          <div className="chart 2">
             <h5 className="title">Chart 2</h5>
             <div className="row">
               <div className="col-4">
@@ -67,7 +67,7 @@ function Results() {
             </div>
           </div>
 
-          <div className="chart-3">
+          <div className="chart 3">
             <h5 className="title">Chart 3</h5>
             <div className="row">
               <div className="col-4">
