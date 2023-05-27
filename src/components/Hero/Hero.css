@@ -61,7 +61,7 @@
     font-size: 1rem;
     transition: all ease-in-out .1s;
     border: 3px solid #4C3A51;
-    background: white;
+    background-image: white;
     color: #774360;
     border-radius: 10px;
 }
@@ -134,3 +134,20 @@
         visibility: hidden;
     }
 } 
+
+
+.hero .fab-btn {
+    display: block;
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.fab-btn:hover {
+    
+}

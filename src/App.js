@@ -3,7 +3,6 @@ import Hero from './components/Hero/Hero';
 import Navbar from './components/Navbar/Navbar';
 import Results from './components/Screens/Results/Results';
 import Profiles from './components/Screens/Profiles/Profiles';
-import Network from './components/Screens/Network/Network';
 import About from './components/Screens/About/About';
 import Contact from './components/Screens/Contact/Contact';
 import { Outlet, Route, Routes } from "react-router-dom";
@@ -20,7 +19,6 @@ export default function App(props) {
             <Route index element={<Hero />} />
             <Route path='/results' element={<Results />} />
             <Route path='/profiles' element={<Profiles />} />
-            <Route path='/network' element={<Network />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
           </Route>

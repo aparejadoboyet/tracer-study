@@ -11,14 +11,19 @@ const MultiStepForm = ({onClose}) => {
 
   return (
 
-      <div className="container w-100 h-100" 
-        style={{
-          maxHeight: '480px',
+      // <div className="container w-100 h-100" 
+      //   style={{
+      //     maxHeight: '560px',
+      //     maxWidth: '720px',
+      //     minHeight: '0',
+      //     minWidth: '0'
+      //   }}>
+        <div className="card w-100 h-100" style={{
+          maxHeight: '560px',
           maxWidth: '720px',
           minHeight: '0',
           minWidth: '0'
         }}>
-        <div className="card w-100 h-100">
           
           <div className="progressbar card-header w-100">
             <MultiStepProgressBar step={step} />
@@ -49,7 +54,7 @@ const MultiStepForm = ({onClose}) => {
           </div>
 
         </div>
-      </div>
+      // </div>
 
   )
 }

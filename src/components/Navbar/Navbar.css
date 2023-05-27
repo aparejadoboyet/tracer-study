@@ -3,7 +3,8 @@
     height: 5rem;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding-right: 3rem;
+    padding-left: 2rem;
     overflow: hidden;
     z-index: 12;
     align-items: center;
@@ -12,17 +13,32 @@
     width: 100vw;
 }
 
-.navbar .logo a{
+.navbar .logo {
     height: 3rem;
-    width: 3rem;
-    display: flex;
+    width: auto;
+}
+
+.navbar .logo a{
+    height: 100%;
+    width: 100%;
+    background-color: solid white;
+}
+
+.navbar .logo a img {
+    height: 100%;
+    width: 100%;
 }
 
 .navbar .logo a .logo-pic:hover {
     cursor: pointer;
-    -webkit-filter: drop-shadow(3px 3px 10px #222222);
-    filter: drop-shadow(3px 3px 10px #222222);
+    /* -webkit-filter: drop-shadow(3px 3px 10px #222222);
+    filter: drop-shadow(3px 3px 10px #222222); */
     transition: all ease-out .2s;
+}
+
+.navbar .nav-menu {
+    display: flex;
+    align-items: center;
 }
 
 .nav-menu ul {

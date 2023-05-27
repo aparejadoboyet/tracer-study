@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import { Link, useLocation } from 'react-router-dom'
-import Logo from '../../assets/img/csd-logo.png'
+import Logo from '../../assets/img/logo-trans-black.png'
 
 function Navbar() {
 
@@ -65,9 +65,6 @@ function Navbar() {
                 </li>
                 <li>
                     <Link className={activeLink == '/profiles' ? 'nav-links link-active' : 'nav-links'} to='/profiles' onMouseEnter={()=>handleLinkMouseEnter('/profiles')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>Profiles</Link>
-                </li>
-                <li>
-                    <Link className={activeLink == '/network' ? 'nav-links link-active' : 'nav-links'} to='/network' onMouseEnter={()=>handleLinkMouseEnter('/network')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>Network</Link>
                 </li>
                 <li>
                     <Link className={activeLink == '/about' ? 'nav-links link-active' : 'nav-links'} to='/about' onMouseEnter={()=>handleLinkMouseEnter('/about')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>About Us</Link>

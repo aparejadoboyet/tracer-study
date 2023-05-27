@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './Hero.css'
 import Form from '../Form/Form'
+import logo from '../../assets/img/logo-200px.png'
+import 'animate.css'
 
 function Hero() {
 
@@ -44,7 +46,9 @@ function Hero() {
             </div>
         </div>
 
-        <button className={(modal ? "survey-btn active" : "survey-btn")} onClick={handleClick}>Take Survey</button>
+        {/* <button className={(modal ? "survey-btn active" : "survey-btn")} onClick={handleClick}>Take Survey</button> */}
+
+        <img src={logo} alt="" className='fab-btn animate__animated animate__pulse animate__slower animate__infinite' onClick={handleClick}/>
 
     </div>
   )

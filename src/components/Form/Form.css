@@ -13,7 +13,11 @@
     padding: 2rem;
 }
 
-.modal-overlay .agreement {
+.text-just {
+    text-align: justify!important;
+}
+
+/* .modal-overlay .agreement {
     background: white;
     display: flex;
     flex-direction: column;
@@ -39,4 +43,4 @@
     width: 100%;
     align-items: center;
     justify-content: space-evenly;
-}
+} */
