@@ -1,0 +1,127 @@
+.footer {
+    height: fit-content;
+    width: 100%;
+    background: linear-gradient(to right, #E7AB79, #B25068, #774360, #4C3A51);;
+    padding: 1.5rem;
+    display: flex;
+    gap: 10%;
+}
+
+.footer .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.footer .wrapper-bottom {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.footer .wrapper .heading {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.footer .wrapper .copyright {
+    font-size: .9rem;
+    margin-bottom: 0;
+}
+
+.footer .wrapper .disclaimer {
+    font-size: .7rem;
+    margin-bottom: 0;
+}
+
+.footer .wrapper ul, .footer .contact-wrapper ul {
+    display: flex;
+    gap: 1.5rem;
+    text-decoration: none;
+    list-style: none;
+}
+
+.footer .wrapper ul li a *, .footer .contact-wrapper ul li a * {
+    color: black;
+    height: 2rem;
+    width: auto;
+}
+
+.footer .link-wrapper, .footer .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer .link-wrapper ul, .footer .contact-wrapper ul {
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.footer .link-wrapper ul li, .footer .contact-wrapper ul li {
+    width: 6rem;
+    font-size: .9rem;
+}
+
+.footer .link-wrapper ul a:hover, .footer .contact-wrapper ul a:hover {
+    transition: all .1s ease-in-out;
+    font-weight: 600;
+    color: white;
+}
+
+.footer .link-wrapper ul, .footer .link-wrapper ul a, .footer .contact-wrapper ul, .footer .contact-wrapper a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.social-icons {
+    padding-left: .5rem;
+}
+
+.copyright p, .disclaimer p, .social-icons {
+    margin-bottom: 0!important;
+}
+
+@media screen and (max-width: 1024px) {
+    .footer {
+      width: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    .footer .wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column!important;
+        align-items: center;
+    }
+
+    .footer .wrapper-bottom {
+        display: flex;
+        flex-direction: row!important;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .disclaimer p {
+        text-align: justify;
+        margin-bottom: 0!important;
+    }
+
+    .copyright p {
+        text-align: center;
+        margin-bottom: 0!important;
+    }
+
+    .social-icons {
+        margin-bottom: 0;
+        padding: 0;
+    }
+  }

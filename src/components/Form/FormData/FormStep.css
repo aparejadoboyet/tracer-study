@@ -1,0 +1,12 @@
+.image-preview-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .image-preview {
+    max-width: 200px;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    display: block;
+  }
