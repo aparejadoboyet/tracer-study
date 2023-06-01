@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './Hero.css'
 import Form from '../Form/Form'
-import logo from '../../assets/img/logo-200px.png'
+import Logo from '../../assets/img/logo-200px.png'
+import LogoBig from '../../assets/img/csd-logo.png'
 import 'animate.css'
 
 function Hero() {
@@ -31,7 +32,7 @@ function Hero() {
               <span>Welcome to the Alumni Tracer Study by Group 20! Our Dean, Engr. Violeta Monticalvo, inspired this study to gather invaluable feedback from our esteemed batch of alumni covering School Year 2022.</span>
             </div>
             <div className="pic">
-              <img src="" alt="" srcSet="" />
+              <img src={LogoBig} alt="" srcSet="" />
             </div>
         </div>
 

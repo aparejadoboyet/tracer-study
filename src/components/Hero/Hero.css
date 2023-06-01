@@ -8,7 +8,7 @@
 }
 
 .hero .wrapper .pic, .hero .wrapper-bottom .bottom-pic {
-    background: red;
+    /* background: red; */
 }
 
 .hero .wrapper .pic, .hero .wrapper-bottom .bottom-pic {
@@ -40,6 +40,12 @@
     width: 50%;
     height: 100%;
     padding: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.hero .wrapper .pic img{
+    height: 100%;
 }
 
 /* LOWER INTRO */

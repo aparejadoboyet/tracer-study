@@ -9,6 +9,15 @@ const MultiStepForm = ({onClose}) => {
 
   const [ step, setStep ] = useState(0);
 
+  const [answers, setAnswers] = useState({});
+
+  const updateAnswer = (value, category) => {
+    setAnswers((prevAnswers) => ({
+      ...prevAnswers,
+      [category]: value,
+    }));
+  };
+
   return (
 
         <div className="card w-100 h-100" 
@@ -25,7 +34,7 @@ const MultiStepForm = ({onClose}) => {
           </div>
 
           <div className="card-body h-100 w-100 overflow-auto">
-            <FormStep step={step} list={question} />
+            <FormStep step={step} list={question} answers={answers} updateAnswer={updateAnswer} />
           </div>
 
           <div className="card-footer d-flex justify-content-evenly align-items-center w-100">
