@@ -44,12 +44,17 @@ function Hero() {
               <span>Alumnus</span>
               <span><strong>Your voice matters!</strong></span>
               <span>By participating in this survey, you can help shape the future of our Computer Science Department and contribute to the success of our fellow alumni.</span>
+
+              <div className="button">
+                <button className={(modal ? "survey-btn active" : "survey-btn")} onClick={handleClick}>Take Survey</button>
+              </div>
+              
             </div>
         </div>
 
-        {/* <button className={(modal ? "survey-btn active" : "survey-btn")} onClick={handleClick}>Take Survey</button> */}
 
-        <img src={logo} alt="" className='fab-btn animate__animated animate__bounce animate__slow animate__infinite' onClick={handleClick}/>
+
+        {/* <img src={logo} alt="" className='fab-btn animate__animated animate__bounce animate__slow animate__infinite' onClick={handleClick}/> */}
 
     </div>
   )

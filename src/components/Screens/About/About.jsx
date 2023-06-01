@@ -8,9 +8,9 @@ function About() {
     <div className="about">
 
       <section className="container-fluid">
-        <div className="row">
+        <div className="row mb-3">
           <div className="col-12 text-center bg-danger">
-            <h2>Meet the GROUP 12</h2>
+            <h2 className='my-0'>Meet the <strong>GROUP 12</strong></h2>
           </div>
         </div>
         <div className="row">

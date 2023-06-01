@@ -1,34 +1,84 @@
 .hero {
-    height: 200vh;
+    height: calc(200vh - 5rem);
     width: 100%;
-    padding: 6rem 1rem 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     gap: 1rem;
     /* background: yellow; */
 }
-/* 
-.hero .wrapper {
-    background: blue;
-}
-
-.hero .wrapper-bottom {
-    background: green;
-} */
 
 .hero .wrapper .pic, .hero .wrapper-bottom .bottom-pic {
     background: red;
 }
 
-.hero .wrapper, .wrapper-bottom {
-    height: 50%;
-    padding: 1rem;
-}
-
 .hero .wrapper .pic, .hero .wrapper-bottom .bottom-pic {
     height: 50%;
     width: 100%;
+}
+
+/* UPPER INTRO */
+
+.hero .wrapper {
+     display: flex;
+     height: 50%;
+     width: 100%;
+     margin-top: 5rem;
+     padding: 1rem;
+}
+
+.hero .wrapper .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    width: 50%;
+    text-align: justify;
+    padding: 3rem;
+}
+
+.hero .wrapper .pic {
+    width: 50%;
+    height: 100%;
+    padding: 3rem;
+}
+
+/* LOWER INTRO */
+
+.hero .wrapper-bottom {
+    display: flex;
+    height: 50%;
+    padding: 1rem;
+    width: 100%;
+}
+
+.hero .wrapper-bottom .bottom-pic {
+    width: 50%;
+    height: 100%;
+    padding: 3rem;
+}
+
+.hero .wrapper-bottom .bottom-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    width: 50%;
+    text-align: justify;
+    padding: 3rem;
+}
+
+.hero .wrapper-bottom .bottom-content span:nth-of-type(3) {
+    margin: 1rem 0;
+    text-transform: uppercase;
+}
+
+.hero .wrapper-bottom .bottom-content .button{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
 }
 
 /* FONTS */
@@ -55,8 +105,8 @@
 
 
 /* SURVEY BUTTON */
-.hero .survey-btn {
-    width: 8rem;
+.hero .wrapper-bottom .bottom-content .button .survey-btn {
+    width: 9rem;
     height: 2.5rem;
     font-size: 1rem;
     transition: all ease-in-out .1s;
@@ -64,9 +114,11 @@
     background-image: white;
     color: #774360;
     border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
-.hero .survey-btn:hover {
+.hero .wrapper-bottom .bottom-content .button .survey-btn:hover {
     cursor: pointer;
     height: 3rem;
     width: 10rem;
@@ -76,12 +128,33 @@
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-@media screen and (max-width: 1024px) {
-    .wrapper, .wrapper-bottom{
+.hero .fab-btn {
+    display: block;
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 880px) {
+    .wrapper {
         display: flex;
         flex-direction: column-reverse!important;
         justify-content: space-evenly;
+        align-items: center;
+        width: 100%!important;
+    }
 
+    .wrapper-bottom { 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
     }
 
     .wrapper .content, .wrapper-bottom .bottom-content {
@@ -89,6 +162,7 @@
         flex-direction: column;
         text-align: justify;
         padding: 1rem;
+        width: 100%;
     }
 
     .hero .survey-btn {
@@ -105,7 +179,7 @@
     }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 480px) {
 
     .wrapper, .wrapper-bottom{
         display: flex;
@@ -134,20 +208,3 @@
         visibility: hidden;
     }
 } 
-
-
-.hero .fab-btn {
-    display: block;
-    height: 100px;
-    width: 100px;
-    position: fixed;
-    right: 30px;
-    bottom: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    cursor: pointer;
-}
-
-.fab-btn:hover {
-    
-}
