@@ -7,15 +7,15 @@ export const FormStep = ({ list, step, answers, updateAnswer }) => {
     const handleImageChange = (event) => {
         const file = event.target.files[0];
         if (file) {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-            updateAnswer(file, 'imageFile');
-            updateAnswer(reader.result, 'imagePreview');
+          const reader = new FileReader();
+          reader.onloadend = () => {
+              updateAnswer(file, 'imageFile');
+              updateAnswer(reader.result, 'imagePreview');
         };
         reader.readAsDataURL(file);
         } else {
-        updateAnswer(null, 'imageFile'); // Clear the image file if no file is selected
-        updateAnswer(null, 'imagePreview'); // Clear the image preview if no file is selected
+          updateAnswer(null, 'imageFile'); // Clear the image file if no file is selected
+          updateAnswer(null, 'imagePreview'); // Clear the image preview if no file is selected
         }
     };
 

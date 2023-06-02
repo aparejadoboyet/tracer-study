@@ -4,6 +4,7 @@ import { question } from '../FormData/Questions';
 import { FormStep } from '../FormData/FormStep';
 import { MultiStepProgressBar } from './ProgressBar/MultiStepProgressBar'; 
 import Button from 'react-bootstrap/Button';
+import { db, ref, set, push } from '../../../firebase'
 
 const MultiStepForm = ({onClose}) => {
 
@@ -17,6 +18,19 @@ const MultiStepForm = ({onClose}) => {
       [category]: value,
     }));
   };
+
+  const saveFormData = () => {
+    // Get a new reference for the form data
+    const formDataRef = ref(db, 'formAnswers');
+  
+    // Push the form answers to the database
+    const newFormRef = push(formDataRef);
+    set(newFormRef, answers);
+  
+    // Close the form
+    onClose();
+  };
+  
 
   return (
 
@@ -62,7 +76,7 @@ const MultiStepForm = ({onClose}) => {
             }
 
             {step === question.length - 1 &&
-              <Button className='px-3 fw-bold align-self-end' variant='outline-success' size='sm' onClick={()=>onClose()}>SUBMIT</Button>
+              <Button className='px-3 fw-bold align-self-end' variant='outline-success' size='sm' onClick={saveFormData}>SUBMIT</Button>
             }
 
           </div>

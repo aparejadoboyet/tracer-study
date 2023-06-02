@@ -39,6 +39,7 @@ export const FormItem = ({  item, onChange, value, imageFile, imagePreview }) =>
             value={value || ''}
             onChange={e=>onChange(e.target.value, item.value) }
           >
+            <option>Click to choose...</option>
             {item.options.map((opt, index) => (
               <option key={index} value={opt}>
                 {opt}

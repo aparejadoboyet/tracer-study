@@ -20,7 +20,7 @@ export const question =  [
       {
         label: 'Alumni Batch',
         type: 'select',
-        options: ['', '2022', '2021', '2020', '2019'],
+        options: ['2023 (Undergraduate)', '2022', '2021', '2020', '2019'],
         value: 'Batch'
       },
       {
