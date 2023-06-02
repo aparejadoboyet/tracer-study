@@ -45,7 +45,8 @@
 }
 
 .hero .wrapper .pic img{
-    height: 100%;
+    height: auto;
+    width: 100%;
 }
 
 /* LOWER INTRO */
