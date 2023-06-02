@@ -32,14 +32,12 @@ function Hero() {
               <span>Welcome to the Alumni Tracer Study by Group 20! Our Dean, Engr. Violeta Monticalvo, inspired this study to gather invaluable feedback from our esteemed batch of alumni covering School Year 2022.</span>
             </div>
             <div className="pic">
-              <img src={LogoBig} alt="" srcSet="" />
+              {/* <img src={LogoBig} alt="" srcSet="" /> */}
             </div>
         </div>
 
         <div className="wrapper-bottom">
-            <div className="bottom-pic">
-              <img src="" alt="" srcSet="" />
-            </div>
+            
             <div className="bottom-content">
               <span>To All</span>
               <span>Alumnus</span>
@@ -48,9 +46,9 @@ function Hero() {
 
               <div className="button">
                 <button className={(modal ? "survey-btn active" : "survey-btn")} onClick={handleClick}>Take Survey</button>
-              </div>
-              
+              </div>  
             </div>
+
         </div>
 
 
