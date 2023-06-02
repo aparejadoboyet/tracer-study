@@ -1,85 +1,91 @@
-import React, { useState } from 'react'
-import './Results.css'
-import Chart from 'react-apexcharts'
+import React, { useState, useEffect } from 'react';
+import './Results.css';
+import Chart from 'react-apexcharts';
+import { db, ref, onValue } from '../../../firebase'; // Import 'onValue' and 'ref' from Firebase
 
 function Results() {
+  const [employmentData, setEmploymentData] = useState([]);
 
-  const [state, setState] = useState(
-    {
-      options: {
-        chart: {
-          id: "basic-bar"
-        },
-        xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
-        }
-      },
-      series: [
-        {
-          name: "series-1",
-          data: [30, 40, 45, 50, 49, 60, 70, 91]
-        }
-      ]
-    }
-  )
+  useEffect(() => {
+    const fetchData = () => {
+      const usersRef = ref(db, 'formAnswers');
+      
+      onValue(usersRef, (snapshot) => {
+        const data = snapshot.val();
 
-  const [secondState, setSecondState] = useState(
+        console.log(data);
+
+        if (data) {
+          const employmentStatus = {};
+          Object.values(data).forEach((user) => {
+            const { Batch, EmploymentStatus } = user;
+            if (Batch && EmploymentStatus === 'Employed') {
+              employmentStatus[Batch] = (employmentStatus[Batch] || 0) + 1;
+            }
+          });
+          const categories = Object.keys(employmentStatus);
+          const series = Object.values(employmentStatus);
+
+          setEmploymentData({ categories, series });
+        }
+      });
+    };
+
+    fetchData();
+  }, []);
+
+  const options = {
+    chart: {
+      id: 'employment-bar',
+    },
+    xaxis: {
+      categories: employmentData.categories || [],
+    },
+  };
+
+  const series = [
     {
-      options: {},
-      series: [44, 55, 41, 17, 15],
-      labels: ['A', 'B', 'C', 'D', 'E']
-    }
-  )
+      name: 'Employment Rate',
+      data: employmentData.series || [],
+    },
+  ];
 
   return (
     <div className="results">
-        <div className="header">
-          <h3>Results</h3>
+      <div className="header">
+        <h3>Results</h3>
+      </div>
+
+      <div className="content">
+        <div className="chart 1">
+          <h5 className="title">Employment Rate</h5>
+          <div className="row">
+            <div className="col-4">
+              <Chart options={options} series={series} type="bar" width="500" />
+            </div>
+          </div>
         </div>
 
-        <div className="content">
-
-          <div className="chart 1">
-            <h5 className="title">Chart 1</h5>
-            <div className="row">
-              <div className="col-4">
-                <Chart
-                options={state.options}
-                series={state.series}
-                type="bar"
-                width="500"
-              />
-              </div>
+        <div className="chart 2">
+          <h5 className="title">Chart 2</h5>
+          <div className="row">
+            <div className="col-4">
+              {/* Add your code for Chart 2 here */}
             </div>
           </div>
+        </div>
 
-          <div className="chart 2">
-            <h5 className="title">Chart 2</h5>
-            <div className="row">
-              <div className="col-4">
-                <Chart
-                options={state.options}
-                series={state.series}
-                type="line"
-                width="500"
-              />
-              </div>
+        <div className="chart 3">
+          <h5 className="title">Chart 3</h5>
+          <div className="row">
+            <div className="col-4">
+              {/* Add your code for Chart 3 here */}
             </div>
           </div>
-
-          <div className="chart 3">
-            <h5 className="title">Chart 3</h5>
-            <div className="row">
-              <div className="col-4">
-                <Chart options={secondState.options} series={secondState.series} type="donut" width="380" />
-              </div>
-            </div>
-          </div>
-
-        </div>      
-
+        </div>
+      </div>
     </div>
-    )
+  );
 }
 
-export default Results
+export default Results;
