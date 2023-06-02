@@ -3,7 +3,7 @@
     height: 5rem;
     display: flex;
     justify-content: space-between;
-    padding-right: 3rem;
+    padding-right: 5rem;
     padding-left: 2rem;
     overflow: hidden;
     z-index: 12;
@@ -44,10 +44,11 @@
 .navbar .nav-menu ul {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     list-style: none;
     margin: 0;
     padding: 0;
+    align-items: flex-start;
 }
 
 .nav-links {
@@ -158,7 +159,7 @@
         /* visibility: hidden; */
         flex-direction: column;
         gap: 2rem;;
-        align-items: flex-start;
+        align-items: start;
     }
 
     .nav-menu-active { 

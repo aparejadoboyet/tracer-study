@@ -69,9 +69,6 @@ function Navbar() {
                 <li>
                     <Link className={activeLink == '/about' ? 'nav-links link-active' : 'nav-links'} to='/about' onMouseEnter={()=>handleLinkMouseEnter('/about')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>About Us</Link>
                 </li>
-                <li>
-                    <Link className={activeLink == '/contact' ? 'nav-links link-active' : 'nav-links'} to='/contact' onMouseEnter={()=>handleLinkMouseEnter('/contact')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>Contact</Link>
-                </li>
             </ul>
         </div>
 

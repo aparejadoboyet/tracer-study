@@ -5,10 +5,12 @@ import ProfileCard from './Card/Card';
 import { db, ref, onValue } from '../../../firebase';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Dna } from 'react-loader-spinner';
 
 function Profiles() {
   const [users, setUsers] = useState([]);
   const [uniqueBatches, setUniqueBatches] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const usersRef = ref(db, 'formAnswers');
@@ -29,6 +31,7 @@ function Profiles() {
 
         setUsers(newUsers);
         setUniqueBatches(newBatches);
+        setIsLoading(false);
       }
     });
   }, []);
@@ -42,6 +45,21 @@ function Profiles() {
     }
     return profileCardSets;
   };
+
+  if (isLoading) {
+    return (
+      <div className="loader">
+        <Dna
+          visible={true}
+          height="200"
+          width="200"
+          ariaLabel="dna-loading"
+          wrapperStyle={{}}
+          wrapperClass="dna-wrapper"
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="profiles">
