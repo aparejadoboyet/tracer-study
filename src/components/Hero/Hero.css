@@ -66,58 +66,77 @@
     cursor: pointer;
 }
 
-/* @media screen and (max-width: 880px) {
-    .wrapper {
-        display: flex;
-        flex-direction: column-reverse!important;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%!important;
-    }
-
-    .wrapper-bottom { 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-    }
-
-    .wrapper .content, .wrapper-bottom .bottom-content {
-        display: flex;
-        flex-direction: column;
-        text-align: justify;
-        padding: 1rem;
-        width: 100%;
-    }
-
-    .hero .survey-btn {
-        position: fixed;
-        right: -2rem;
-        bottom: 2rem;
-        width: 10rem;
-        padding-left: 1rem;
-        text-align: start;
-    }
-
-    .hero .survey-btn.active {
-        visibility: hidden;
-    }
-} */
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
 
     .hero {
         width: 100%;
         padding-top: 5rem;
-        overflow: hidden;
     }
 
     .hero .wrapper {
         height: calc(100vh - 5rem);
-        background: red;
         width: 100%;
         padding: .5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero .wrapper::before {
+        content: '';
+        background-image: url('../../assets/img/mahogany.jpg');
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: -120px;
+        bottom: 0;
+        right: 0;
+    }
+
+    .hero .wrapper::after {
+        content: '';
+        background: rgba(0, 0, 0, 0.5);
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        transform: translateY(50%);
+        height: 50%;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    .hero .wrapper .content {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        position: relative;
+        z-index: 1;
+        color: rgb(255, 255, 255);
+    }
+    
+    .hero .wrapper .content span:first-of-type {
+        font-weight: bolder;
+        text-transform: uppercase;
+    }
+
+    .hero .wrapper .content span:nth-of-type(2) {
+        font-weight: bold;
+        font-size: .8rem;
+    }
+
+    .hero .wrapper .content span:nth-of-type(3) {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .hero .wrapper .content span:last-of-type {
+        font-size: .8rem;
+        text-align: justify;
+        text-shadow: 2px 2px #353535;
     }
 
     /* LOWER */
@@ -154,6 +173,136 @@
         flex-direction: column;
         align-items: center;
         padding-top: 2rem;
+        justify-content: center;
+     }
+
+     .hero .wrapper-bottom .bottom-content span:nth-of-type(2) {
+        text-transform: uppercase;
+        font-weight: bolder;
+        font-size: 2rem;
+     }
+
+     .hero .wrapper-bottom .bottom-content span:nth-of-type(4) {
+        text-align: center;
+        padding: 1rem;
+     }
+
+     .hero .wrapper-bottom .bottom-content .button {
+        height: 4rem;
+        width: 100%;
+        display: grid;
+        place-items: center;
+     }
+
+}
+
+@media screen and (max-width: 320px) {
+
+    .hero {
+        width: 100%;
+        padding-top: 5rem;
+    }
+
+    .hero .wrapper {
+        height: calc(100vh - 5rem);
+        width: 100%;
+        padding: .5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero .wrapper::before {
+        content: '';
+        background-image: url('../../assets/img/mahogany.jpg');
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: -120px;
+        bottom: 0;
+        right: 0;
+    }
+
+    .hero .wrapper::after {
+        content: '';
+        background: rgba(0, 0, 0, 0.5);
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: calc(50%);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    .hero .wrapper .content {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        position: relative;
+        z-index: 1;
+        color: rgb(255, 255, 255);
+    }
+    
+    .hero .wrapper .content span:first-of-type {
+        font-weight: bolder;
+        text-transform: uppercase;
+    }
+
+    .hero .wrapper .content span:nth-of-type(2) {
+        font-weight: bold;
+        font-size: .8rem;
+    }
+
+    .hero .wrapper .content span:nth-of-type(3) {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .hero .wrapper .content span:last-of-type {
+        font-size: .8rem;
+        text-align: justify;
+        text-shadow: 2px 2px #353535;
+    }
+
+    /* LOWER */
+
+    .hero .wrapper-bottom {
+        height: calc(100vh - 5rem);
+        width: 100%;
+        /* background: greenyellow; */
+        padding: .5rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero .wrapper-bottom::before{
+        content: '';
+        background-image: url('../../assets/img/graduates.png');
+        background-size: cover;
+        position: absolute;
+        height: 60%;
+        left: 0;
+        bottom: -10px;
+        right: 0;
+        opacity: 0.3;
+        filter: blur(3px);
+        -webkit-filter: blur(3px);
+    }
+
+    .hero .wrapper-bottom .bottom-content {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2rem;
+        justify-content: center;
      }
 
      .hero .wrapper-bottom .bottom-content span:nth-of-type(2) {
