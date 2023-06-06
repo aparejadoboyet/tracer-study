@@ -146,7 +146,8 @@
 
 /* SURVEY BUTTON */
 .hero .wrapper-bottom .bottom-content .button .survey-btn {
-    width: 9rem;
+    width: fit-content;
+    padding: 0 1rem;
     height: 2.5rem;
     font-size: 1rem;
     transition: all ease-in-out .1s;
@@ -160,8 +161,6 @@
 
 .hero .wrapper-bottom .bottom-content .button .survey-btn:hover {
     cursor: pointer;
-    height: 3rem;
-    width: 10rem;
     border: 3px solid white;
     color: white;
     background: #4C3A51;

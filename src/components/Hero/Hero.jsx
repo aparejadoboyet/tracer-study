@@ -29,7 +29,7 @@ function Hero() {
               <span>Osmeña Colleges</span>
               <span>Computer Science Department</span>
               <span>Tracer Study</span>
-              <span>Welcome to the Alumni Tracer Study by Group 20! Our Dean, Engr. Violeta Monticalvo, inspired this study to gather invaluable feedback from our esteemed batch of alumni covering School Year 2022.</span>
+              <span>Welcome to the Alumni Tracer Study of Group 12! Our Dean, Engr. Violeta Monticalvo, inspired this study to gather invaluable feedback from our esteemed batch of alumni of Computer Science Department.</span>
             </div>
             <div className="pic">
               {/* <img src={LogoBig} alt="" srcSet="" /> */}
@@ -45,7 +45,7 @@ function Hero() {
               <span>By participating in this survey, you can help shape the future of our Computer Science Department and contribute to the success of our fellow alumni.</span>
 
               <div className="button">
-                <button className={(modal ? "survey-btn active" : "survey-btn")} onClick={handleClick}>Take Survey</button>
+                <button className={(modal ? "survey-btn active" : "survey-btn")} onClick={handleClick}>Tracer Information Form</button>
               </div>  
             </div>
 

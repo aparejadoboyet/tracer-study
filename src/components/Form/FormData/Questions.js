@@ -8,6 +8,11 @@ export const question =  [
         value: 'FirstName'
       },
       {
+        label: 'Middle Initial',
+        type: 'number',
+        value: 'MidleInitial'
+      },
+      {
         label: 'Surname',
         type: 'text',
         value: 'LastName'
@@ -36,13 +41,19 @@ export const question =  [
       {
         label: 'What is your current employment status?',
         type: 'select',
-        options: ['', 'Employed', 'Unemployed', 'Self-Employed'],
+        options: ['Employed', 'Unemployed', 'Self-Employed'],
         value: 'EmploymentStatus'
       },
       {
-        label: 'How many months were you employed in your current job?',
+        label: 'After you graduate, how many months does it take you to be employed in your current job?',
         type: 'number',
         value: 'CurrentEmploymentDuration'
+      },
+      {
+        label: 'How much is your current job salary?',
+        type: 'select',
+        options: ['5,000 - 10,000', '11,000 - 20,000','21,000 - 30,000', '31,000 - 50,000','50,000 & Above',],
+        value: 'JobSalaryBracket'
       },
       {
         label: 'Are you currently working in a field related to computer science?',
@@ -97,7 +108,8 @@ export const question =  [
       items: [
         {
           label: 'How confident do you feel about your career prospects as a computer science graduate?',
-          type: 'text-area',
+          type: 'select',
+          options: ['Very Confident', 'Confident', 'Not Confident'],
           value: 'CareerConfidenceFeedback'
         },  
         {
@@ -111,7 +123,7 @@ export const question =  [
     section: 6,
       items: [
         {
-          label: 'Are you ready to SUBMIT ?',
+          label: 'You can review below the summary of your answers. Click SUBMIT button to upload your answers.',
           type: 'data',
           value: 'Data'
         }     
