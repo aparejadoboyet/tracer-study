@@ -9,7 +9,7 @@ export const question =  [
       },
       {
         label: 'Middle Initial',
-        type: 'number',
+        type: 'text',
         value: 'MidleInitial'
       },
       {

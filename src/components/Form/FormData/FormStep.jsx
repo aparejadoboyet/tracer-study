@@ -4,20 +4,51 @@ import './FormStep.css';
 
 export const FormStep = ({ list, step, answers, updateAnswer }) => {
 
-    const handleImageChange = (event) => {
-        const file = event.target.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onloadend = () => {
-              updateAnswer(file, 'imageFile');
-              updateAnswer(reader.result, 'imagePreview');
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const image = new Image();
+        image.onload = () => {
+          const canvas = document.createElement('canvas');
+          const MAX_SIZE = 300;
+          let width = image.width;
+          let height = image.height;
+  
+          if (width > height) {
+            if (width > MAX_SIZE) {
+              height *= MAX_SIZE / width;
+              width = MAX_SIZE;
+            }
+          } else {
+            if (height > MAX_SIZE) {
+              width *= MAX_SIZE / height;
+              height = MAX_SIZE;
+            }
+          }
+  
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(image, 0, 0, width, height);
+          canvas.toBlob((blob) => {
+            const resizedFile = new File([blob], file.name, {
+              type: file.type,
+              lastModified: Date.now(),
+            });
+            updateAnswer(resizedFile, 'imageFile');
+            updateAnswer(URL.createObjectURL(resizedFile), 'imagePreview');
+          }, file.type);
         };
-        reader.readAsDataURL(file);
-        } else {
-          updateAnswer(null, 'imageFile'); // Clear the image file if no file is selected
-          updateAnswer(null, 'imagePreview'); // Clear the image preview if no file is selected
-        }
-    };
+        image.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    } else {
+      updateAnswer(null, 'imageFile');
+      updateAnswer(null, 'imagePreview');
+    }
+  };
 
    // Helper function to render the questions and user's answers
     const renderQuestionAndAnswer = (item) => {
