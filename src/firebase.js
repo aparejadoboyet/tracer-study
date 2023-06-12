@@ -3,18 +3,20 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getDatabase, ref, onValue, push, set, get } from "firebase/database";
 import { getFirestore } from 'firebase/firestore'
+import { getStorage } from 'firebase/storage'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD7MhN2d_Zsc-uwt_NpROL3-9auM67IJiI",
-  authDomain: "tracer-study-f295d.firebaseapp.com",
-  databaseURL: "https://tracer-study-f295d-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "tracer-study-f295d",
-  storageBucket: "tracer-study-f295d.appspot.com",
-  messagingSenderId: "862798252145",
-  appId: "1:862798252145:web:2a3d09480a4ec6c7e773d0"
+  apiKey: "AIzaSyDNmFkMll2o5ISRzDLwhsvgt4JFy8wm2OU",
+  authDomain: "tracer-study-group12.firebaseapp.com",
+  projectId: "tracer-study-group12",
+  storageBucket: "tracer-study-group12.appspot.com",
+  messagingSenderId: "656185530188",
+  appId: "1:656185530188:web:26d857307fe0549731e1e9",
+  measurementId: "G-WR4PPCM1Z3",
+  databaseURL: "https://tracer-study-group12-default-rtdb.asia-southeast1.firebasedatabase.app"
 };
 
 // Initialize Firebase
@@ -26,4 +28,6 @@ export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 export const dbFirestore = getFirestore(app);
 
-export { db, ref, onValue, push, set, get };
+const storage = getStorage(app);
+
+export { db, storage, ref, onValue, push, set, get };

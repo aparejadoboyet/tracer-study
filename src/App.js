@@ -59,7 +59,18 @@ const AdminLayout = () => {
 const NotFound = () => {
   return (
     <>
-      <h1>404 - Page Not Found</h1>
+      <Navbar />
+      <div 
+        style={{
+          height: '100%',
+          width: '100%',
+          padding: '6rem 1rem 1rem',
+          display: 'grid',
+          placeItems: 'center',
+          fontWeight: 'bolder'
+          }}>
+            <h2>404 - Page Not Found</h2>
+          </div>
       {/* Add your custom error page content here */}
     </>
   )

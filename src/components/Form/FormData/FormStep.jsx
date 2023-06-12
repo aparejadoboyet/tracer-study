@@ -1,18 +1,19 @@
 import { Form } from 'react-bootstrap';
 import { FormItem } from '../FormData/FormItem';
 import './FormStep.css';
+import { storage } from '../../../firebase';
 
 export const FormStep = ({ list, step, answers, updateAnswer }) => {
 
-  const handleImageChange = (event) => {
+  const handleImageChange = async (event) => {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
-      reader.onloadend = () => {
+      reader.onloadend = async () => {
         const image = new Image();
-        image.onload = () => {
+        image.onload = async () => {
           const canvas = document.createElement('canvas');
-          const MAX_SIZE = 300;
+          const MAX_SIZE = 100;
           let width = image.width;
           let height = image.height;
   
@@ -32,24 +33,38 @@ export const FormStep = ({ list, step, answers, updateAnswer }) => {
           canvas.height = height;
           const ctx = canvas.getContext('2d');
           ctx.drawImage(image, 0, 0, width, height);
-          canvas.toBlob((blob) => {
-            const resizedFile = new File([blob], file.name, {
-              type: file.type,
-              lastModified: Date.now(),
-            });
-            updateAnswer(resizedFile, 'imageFile');
-            updateAnswer(URL.createObjectURL(resizedFile), 'imagePreview');
-          }, file.type);
+  
+          const resizedFile = await new Promise((resolve) => {
+            canvas.toBlob((blob) => {
+              resolve(new File([blob], file.name, {
+                type: file.type,
+                lastModified: Date.now(),
+              }));
+            }, file.type);
+          });
+  
+          // Upload the resized file to Firebase Storage
+          const storageRef = storage.ref();
+          const fileRef = storageRef.child(resizedFile.name);
+          await fileRef.put(resizedFile);
+  
+          // Get the download URL of the uploaded file
+          const downloadURL = await fileRef.getDownloadURL();
+  
+          updateAnswer(resizedFile, 'imageFile');
+          updateAnswer(downloadURL, 'imageURL');
+          updateAnswer(URL.createObjectURL(resizedFile), 'imagePreview');
         };
         image.src = reader.result;
       };
       reader.readAsDataURL(file);
     } else {
       updateAnswer(null, 'imageFile');
+      updateAnswer(null, 'imageURL');
       updateAnswer(null, 'imagePreview');
     }
   };
-
+  
    // Helper function to render the questions and user's answers
     const renderQuestionAndAnswer = (item) => {
         const answer = answers[item.value];
