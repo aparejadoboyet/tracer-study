@@ -4,32 +4,59 @@ import { question } from '../FormData/Questions';
 import { FormStep } from '../FormData/FormStep';
 import { MultiStepProgressBar } from './ProgressBar/MultiStepProgressBar';
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 import { db, ref, set, push } from '../../../firebase';
+import Resizer from 'react-image-file-resizer';
 
 const MultiStepForm = ({ onClose }) => {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState({});
-  const [isSubmitClicked, setIsSubmitClicked] = useState(false);
-  const [hasEmptyFields, setHasEmptyFields] = useState(false);
-
+  
   const updateAnswer = (value, category) => {
-    setAnswers((prevAnswers) => ({
-      ...prevAnswers,
-      [category]: value,
-    }));
-  };
+
+      if (category === 'ProfilePicture') {
+
+        const file = value;
+        const fileReader = new FileReader();
+    
+        fileReader.onloadend = () => {
+          const imagePreview = fileReader.result;
+          setAnswers(prevAnswers => ({
+            ...prevAnswers,
+            imageFile: file,
+            imagePreview: imagePreview
+          }));
+    
+          // Resize the image to 200px
+          Resizer.imageFileResizer(
+            file,
+            200,
+            200,
+            'JPEG',
+            100,
+            0,
+            (resizedImage) => {
+              // Update the answers with the resized image
+              setAnswers(prevAnswers => ({
+                ...prevAnswers,
+                imageResized: resizedImage
+              }));
+            },
+            'base64'
+          );
+        };
+    
+        if (file) {
+          fileReader.readAsDataURL(file);
+        }
+      } else {
+        setAnswers(prevAnswers => ({
+          ...prevAnswers,
+          [category]: value
+        }));
+      }
+    };
 
   const saveFormData = () => {
-    // Check if there are any empty fields
-
-    console.log(Object.keys(answers))
-
-    const emptyFields = Object.keys(answers).filter((key) => answers[key] === '');
-    if (emptyFields.length > 0) {
-      setHasEmptyFields(true);
-      return;
-    }
 
     // Get a new reference for the form data
     const formDataRef = ref(db, 'formAnswers');
@@ -43,14 +70,7 @@ const MultiStepForm = ({ onClose }) => {
   };
 
   const handleNext = () => {
-    if (hasEmptyFields) {
-      setHasEmptyFields(false);
-    }
     setStep((prevStep) => prevStep + 1);
-  };
-
-  const handleModalClose = () => {
-    setHasEmptyFields(false);
   };
 
   return (
@@ -101,26 +121,13 @@ const MultiStepForm = ({ onClose }) => {
             variant="outline-success"
             size="sm"
             onClick={() => {
-              setIsSubmitClicked(true);
               saveFormData();
             }}
           >
             SUBMIT
           </Button>
         )}
-
-        {/* Display modal with warning when submit button is clicked and there are empty fields */}
-        <Modal show={hasEmptyFields && isSubmitClicked} onHide={handleModalClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Empty Fields</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Please fill in all fields before submitting the form.</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleModalClose}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
+        
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const ProfileCard = ({ user }) => {
       //   maxWidth: 'fit-content' 
       // }}
     >
-      <Card.Img variant="top" src={user.imagePreview} alt="Profile Image" className="profile-image" />
+      <Card.Img variant="top" src={user.imageResized} alt="Profile Image" className="profile-image" />
       <Card.Body>
         <Card.Title className="profile-name">{`${FirstName} ${LastName}`}</Card.Title>
         <Card.Text>{`Age: ${Age}`}</Card.Text>

@@ -8,7 +8,7 @@ export const question =  [
         value: 'FirstName'
       },
       {
-        label: 'Middle Initial',
+        label: 'Middle Name',
         type: 'text',
         value: 'MidleInitial'
       },
@@ -30,7 +30,7 @@ export const question =  [
       },
       {
         label: 'Profile Picture',
-        type: 'image',
+        type: 'file',
         value: 'ProfilePicture'
       }
     ]
