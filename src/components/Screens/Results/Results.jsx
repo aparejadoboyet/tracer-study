@@ -13,8 +13,6 @@ function Results() {
       onValue(usersRef, (snapshot) => {
         const data = snapshot.val();
 
-        console.log(data);
-
         if (data) {
           const employmentStatus = {};
           Object.values(data).forEach((user) => {

@@ -34,8 +34,8 @@ export const FormStep = ({ list, step, answers, updateAnswer }) => {
                   onChange={updateAnswer}
                   value={answers.imageFile}
                 />
-                {answers.imagePreview && (
-                  <img src={answers.imagePreview} alt="Profile" style={{ marginTop: '10px', width: '100px', height: '100px' }} />
+                {answers.imageResized && (
+                  <img src={answers.imageResized} alt="Profile" style={{ marginTop: '10px', width: '100px', height: '100px' }} />
                 )}
               </Form.Group>
             );
@@ -50,7 +50,7 @@ export const FormStep = ({ list, step, answers, updateAnswer }) => {
               />
             </Form.Group>
           );
-          
+
           })}
 
         {step === list.length - 1 && (

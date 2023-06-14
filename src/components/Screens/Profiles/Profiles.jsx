@@ -63,10 +63,12 @@ function Profiles() {
 
   return (
     <div className="profiles">
+      <div className="wrapper-accordion">
+
       <Accordion>
         {uniqueBatches.map((batch) => (
           <Accordion.Item key={batch} eventKey={batch}>
-            <Accordion.Header>{batch}</Accordion.Header>
+            <Accordion.Header>Batch&nbsp;{batch}</Accordion.Header>
             <Accordion.Body className="acc-body">
               {users.filter((user) => user.Batch === batch).length > 3 ? (
                 <Carousel
@@ -104,6 +106,8 @@ function Profiles() {
           </Accordion.Item>
         ))}
       </Accordion>
+
+      </div>
     </div>
   );
 }
