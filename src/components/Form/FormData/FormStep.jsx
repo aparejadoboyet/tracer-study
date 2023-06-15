@@ -29,14 +29,14 @@ export const FormStep = ({ list, step, answers, updateAnswer }) => {
           if (item.type === 'file' && item.value === 'ProfilePicture') {
             return (
               <Form.Group key={item.label} className="h-100 mb-3 w-100">
-                                {answers.imageResized && (
+                {answers.imageResized && (
                   <div className="img-wrapper"
                     style={{
                       width: '100%',
                       display: 'flex',
                       justifyContent: 'center'  
                     }}>
-                    <img src={answers.imageResized} alt="Profile" style={{ marginTop: '10px', width: '100px', height: '100px' }} />
+                    <img src={answers.imageResized} alt="Profile" style={{ marginTop: '10px', width: '150px', height: '150px' }} />
                   </div>
                 )}
                 <FormItem

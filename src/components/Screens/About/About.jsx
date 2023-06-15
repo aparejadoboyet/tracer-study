@@ -1,23 +1,20 @@
 import React from 'react'
 import './About.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Members from './Members/Members';
 
 function About() {
   return (
 
     <div className="about">
 
-      <section className="container-fluid">
-        <div className="row mb-3">
-          <div className="col-12 text-center bg-danger">
-            <h2 className='my-0'>Meet the <strong>GROUP 12</strong></h2>
+      <section className="container-fluid bg-danger py-3">
+        <div className="row container mx-auto bg-success">
+          <div className="col-12 bg-primary">
+            <h1 className='text-center'>Members</h1>
           </div>
-        </div>
-        <div className="row">
-          <div className="col-3 p-2 bg-primary">
-            <div className="card bg-success">
-              CARD 1
-            </div>
+          <div className="col-12 bg-primary">
+            <Members />
           </div>
         </div>
       </section>
