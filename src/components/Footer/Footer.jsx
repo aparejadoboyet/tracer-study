@@ -13,9 +13,9 @@ const Footer = () => {
           </div>
           <div className="social">
             <ul className='social-icons'>
-              <li><a href=""><FaFacebook /></a></li>
-              <li><a href=""><FaGithub /></a></li>
-              <li><a href=""><FaTwitter /></a></li>
+              <li><a href="#"><FaFacebook /></a></li>
+              <li><a href="#"><FaGithub /></a></li>
+              <li><a href="#"><FaTwitter /></a></li>
             </ul>
           </div>
           <div className="copyright">

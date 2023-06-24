@@ -10,7 +10,6 @@ import Admin from './components/Admin/Admin';
 import Footer from './components/Footer/Footer';
 
 export default function App(props) {
-
   return (
     <div className="App">
       <div className='content-wrap'>
@@ -22,15 +21,10 @@ export default function App(props) {
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
           </Route>
-          <Route path='/admin' element={<AdminLayout />}>
-            <Route index element={<Admin />} />
-          </Route>
-
+          <Route path='/admin' element={<AdminLayout />}/>
           <Route path='*' element={<NotFound />} />
-          
         </Routes>
       </div>
-      <Footer />
     </div>
   );
 }
@@ -42,25 +36,24 @@ const RootLayout = () => {
       <div className='content'>
         <Outlet />
       </div>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
 const AdminLayout = () => {
   return (
     <>
-      <div className='content'>
-        <Outlet />
-      </div>
+      <Admin />
     </>
-  )
-}
+  );
+};
 
 const NotFound = () => {
   return (
     <>
       <Navbar />
-      <div 
+      <div
         style={{
           height: '100%',
           width: '100%',
@@ -68,10 +61,10 @@ const NotFound = () => {
           display: 'grid',
           placeItems: 'center',
           fontWeight: 'bolder'
-          }}>
-            <h2>404 - Page Not Found</h2>
-          </div>
+        }}>
+        <h2>404 - Page Not Found</h2>
+      </div>
       {/* Add your custom error page content here */}
     </>
-  )
-}
+  );
+};

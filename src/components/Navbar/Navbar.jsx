@@ -58,16 +58,16 @@ function Navbar() {
         <div className={menu ? 'nav-menu nav-menu-active' : 'nav-menu'}>
             <ul>
                 <li>
-                    <Link className={activeLink == '/' ? 'nav-links link-active' : 'nav-links'} to='/'onMouseEnter={()=>handleLinkMouseEnter('/')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>Home</Link>
+                    <Link className={activeLink === '/' ? 'nav-links link-active' : 'nav-links'} to='/'onMouseEnter={()=>handleLinkMouseEnter('/')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>Home</Link>
                 </li>
                 <li>
-                    <Link className={activeLink == '/results' ? 'nav-links link-active' : 'nav-links'} to='/results' onMouseEnter={()=>handleLinkMouseEnter('/results')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>Results</Link>
+                    <Link className={activeLink === '/results' ? 'nav-links link-active' : 'nav-links'} to='/results' onMouseEnter={()=>handleLinkMouseEnter('/results')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>Results</Link>
                 </li>
                 <li>
-                    <Link className={activeLink == '/profiles' ? 'nav-links link-active' : 'nav-links'} to='/profiles' onMouseEnter={()=>handleLinkMouseEnter('/profiles')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>Profiles</Link>
+                    <Link className={activeLink === '/profiles' ? 'nav-links link-active' : 'nav-links'} to='/profiles' onMouseEnter={()=>handleLinkMouseEnter('/profiles')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>Profiles</Link>
                 </li>
                 <li>
-                    <Link className={activeLink == '/about' ? 'nav-links link-active' : 'nav-links'} to='/about' onMouseEnter={()=>handleLinkMouseEnter('/about')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>About Us</Link>
+                    <Link className={activeLink === '/about' ? 'nav-links link-active' : 'nav-links'} to='/about' onMouseEnter={()=>handleLinkMouseEnter('/about')} onMouseLeave={handleLinkMouseLeave} onClick={handleClick}>About Us</Link>
                 </li>
             </ul>
         </div>
