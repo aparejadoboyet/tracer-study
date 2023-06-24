@@ -1,0 +1,37 @@
+.nav-link {
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header {
+    font-size: .9rem;
+}
+
+.dashboard {
+    justify-content: center;
+}
+
+hr {
+    color: #6c757d;
+}
+
+nav * {
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 480px) {
+    
+    .nav-wrapper {
+        position: absolute;
+        left: -100%;
+    }
+
+    .burger {
+        position: absolute;
+        background: red;
+        left: 100%;
+    }
+
+}
