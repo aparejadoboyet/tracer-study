@@ -22,49 +22,62 @@ const Admin = () => {
     <div className="container-fluid gx-0" style={{height:"100vh", width:"100%"}}>
       <div className="nav-wrapper row container-fluid h-100 w-100">
 
-        <nav className="nav d-flex flex-direction-column justify-content-start bg-primary h-100 col-xl-2 col-lg-3 col-md-4 p-4 overflow-auto">
-          <div className="row d-flex w-100 justify-content-between align-items-center mb-3">
-            <div className="col-10">ADMIN</div>
-            <div className="burger col-2">
-              <HamburgerArrowTurn
-                buttonWidth={20}
-                barColor="white"
-                {...{ isActive, toggleButton }}
-              />
-            </div>
+        <aside className="d-flex flex-column flex-shrink-0 p3 text-white bg-dark" style={{width: "280px"}}>
+
+          <div className="d-flex align-items-center flex-direction-between">
+            <span className="flex-grow-1">ADMIN</span>
+            <HamburgerArrowTurn
+              buttonWidth={20}
+              barColor="white"
+              {...{ isActive, toggleButton }}
+            />
           </div>
-          <div className="user row flex-column text-center w-100">
+
+          <div className="d-flex flex-column justify-content-center align-items-center">
             <div className="user-image">
               <img src="" 
                 style={{
                   backgroundImage:`url(${tempImage})`,
-                    width: '5rem',
-                    height: '5rem',
+                    width: '4rem',
+                    height: '4rem',
                     backgroundSize: 'cover'
               }}/>
             </div>
-            <div className="user-name fs-5 fw-bold">User Name</div>
-            <div className="user-details fw-light fst-italic">User Details</div>
+            <span className="fs-5 fw-bold">User Name</span>
+            <span className="fs-6 fw-light fst-italic">User Details</span>
           </div>
-          <hr className='w-100'/>
-          <div className="row w-100">
-            <a href="#" aria-label='Data from the tracer study.' className="dashboard text-black text-center nav-link fw-bold w-100"><HiOutlineHome />Dashboard</a>
-          </div>
-          <hr className='w-100'/>
-          <ul className="row navbar-nav flex-column">
-            <div className="header text-start">Data</div>
-            <li className="nav-item"><a href="" className="nav-link ms-2 fw-bold"><RiGraduationCapLine />Alumni Profiles</a></li>
-            <li className="nav-item"><a href="" className="nav-link ms-2 fw-bold"><RiSurveyLine />Alumni Survey</a></li>
-            <li className="nav-item"><a href="" className="nav-link ms-2 fw-bold"><HiOutlineUserGroup/>Group Members</a></li>
+
+          <hr/>
+
+          <nav className="nav nav-pills d-flex justify-content-center">
+            <a href="#" aria-label='Data from the tracer study.' className="nav-link link-light d-flex align-items-center">
+              <HiOutlineHome className='me-2'/>
+              Dashboard</a>
+          </nav>
+
+          <hr/>
+
+          <ul className="nav nav-pills flex-column">
+
+            <span className="fw-lighter">Data</span>
+
+            <li className="nav-item"><a href="" className="nav-link link-light d-flex align-items-center"><RiGraduationCapLine className='me-2' />Alumni Profiles</a></li>
+            <li className="nav-item"><a href="" className="nav-link link-light d-flex align-items-center"><RiSurveyLine className='me-2' />Alumni Survey</a></li>
+            <li className="nav-item"><a href="" className="nav-link link-light d-flex align-items-center"><HiOutlineUserGroup className='me-2'/>Group Members</a></li>
           </ul>
-          <hr className='w-100'/>
-          <ul className="row navbar-nav flex-column">
-            <div className="header text-start">Charts/Graphs</div>
-            <li className="nav-item"><a href="" className="nav-link ms-2 fw-bold"><BiBarChartSquare />Bar</a></li>
-            <li className="nav-item"><a href="" className="nav-link ms-2 fw-bold"><HiOutlineChartPie />Pie</a></li>
-            <li className="nav-item"><a href="" className="nav-link ms-2 fw-bold"><GrLineChart />Line</a></li>
+
+          <hr/>
+
+          <ul className="nav nav-pills flex-column">
+
+            <span className="fw-lighter">Charts/Graphs</span>
+
+            <li className="nav-item"><a href="" className="nav-link link-light d-flex align-items-center"><BiBarChartSquare className='me-2' />Bar</a></li>
+            <li className="nav-item"><a href="" className="nav-link link-light d-flex align-items-center"><HiOutlineChartPie className='me-2' />Pie</a></li>
+            <li className="nav-item"><a href="" className="nav-link link-light d-flex align-items-center"><GrLineChart className='me-2 line-chart' />Line</a></li>
           </ul>
-        </nav>
+
+        </aside>
 
         <div className="main col-lg-9 col-md-8"></div>
 
