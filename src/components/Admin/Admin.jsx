@@ -56,7 +56,7 @@ const Admin = () => {
             <span className="user-details fs-6 fw-light fst-italic">User Details</span>
           </div>
           <hr/>
-          <ul className="nav nav-pills flex-column h-100 mb-3">
+          <ul className="nav nav-pills flex-column h-100 mb-3 gap-2">
 
             <li className="nav-item">
               <a href="#" onClick={toggleLink} className="active nav-link link-light d-flex align-items-center">

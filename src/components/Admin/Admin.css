@@ -17,6 +17,11 @@ hr {
     gap: 1rem;
 }
 
+svg {
+    height: 1.3rem;
+    width: 1.3rem;
+}
+
 .nav-link svg, span {
     pointer-events: none;
 }
@@ -26,7 +31,7 @@ hr {
 }
 
 .sidebar-collapsed, aside, .nav-link, svg {
-    transition: all ease-in-out .2s;
+    transition: all ease .5s;
 }
 
 .sidebar-collapsed :is(.logo, .user-name, .user-details) {
