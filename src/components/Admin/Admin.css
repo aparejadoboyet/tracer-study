@@ -1,3 +1,7 @@
+.admin * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important;
+}
+
 hr {
     height: 1px;
     margin: 1rem 0;
@@ -8,13 +12,13 @@ hr {
     display: block;
 }
 
-.nav-item.active > .nav-link {
-    color: #fff;
-    background-color: #0d6efd;
-  }
-
 .nav-link {
     padding-left: 1rem;
+    gap: 1rem;
+}
+
+.nav-link svg, span {
+    pointer-events: none;
 }
 
 .line-chart path {
@@ -29,26 +33,31 @@ hr {
     display: none;
 }
 
-.sidebar-collapsed .nav-link {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    visibility: hidden;
-}
-
-.sidebar-collapsed svg {
-    visibility: visible!important;
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-bottom: .5rem;
+.sidebar-collapsed .nav-link > span {
+    display: none;
 }
 
 .sidebar-collapsed .nav-link {
     margin-left: 0!important;
+    padding-left: 0!important;
+    justify-items: center!important;
+}
+
+.sidebar-collapsed .nav-link svg {
+    pointer-events: none;
+    height: 1.5rem;
+    width: 1.5rem;
+    transform: translateX(.5rem);
+}
+
+.sidebar-collapsed .nav-item {
+    width: 40px;
+    padding: 0;
+    margin: 0;
 }
 
 .sidebar-collapsed ul hr {
-    width: 3rem;
+    width: inherit;
 }
 
 .sidebar-collapsed > div:first-child {
