@@ -8,6 +8,11 @@ hr {
     display: block;
 }
 
+.nav-item.active > .nav-link {
+    color: #fff;
+    background-color: #0d6efd;
+  }
+
 .nav-link {
     padding-left: 1rem;
 }

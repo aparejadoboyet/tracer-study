@@ -4,7 +4,7 @@ import { HamburgerArrowTurnReverse } from 'react-animated-burgers'
 import tempImage from '../../../src/assets/img/abstract-user-flat-4.svg'
 import { HiOutlineHome, HiOutlineUserGroup, HiOutlineChartPie } from 'react-icons/hi'
 import { RiGraduationCapLine, RiSurveyLine } from 'react-icons/ri'
-import { BiBarChartSquare } from 'react-icons/bi'
+import { BiPrinter } from 'react-icons/bi'
 import { GrLineChart } from 'react-icons/gr'
 import { IoMdLogOut } from 'react-icons/io'
 import './Admin.css'
@@ -57,13 +57,15 @@ const Admin = () => {
           </div>
           <hr/>
           <ul className="nav nav-pills d-flex flex-column h-100 mb-3">
-            <li className="nav-item"><a href="#" onClick={toggleLink} className="active nav-link link-light d-flex align-items-center"><HiOutlineHome className='icon me-2'/>Dashboard</a></li>
-            <li className="nav-item"><a href="#" onClick={toggleLink} className="nav-link link-light d-flex align-items-center"><RiGraduationCapLine className='icon me-2' />Alumni Profiles</a></li>
-            <li className="nav-item"><a href="#" onClick={toggleLink} className="nav-link link-light d-flex align-items-center"><RiSurveyLine className='icon me-2' />Questionaire Data</a></li>
+            <li className="nav-item"><a href="#" onClick={toggleLink} className="active nav-link link-light d-flex align-items-center"><HiOutlineHome className='me-2'/>Dashboard</a></li>
+            <li className="nav-item"><a href="#" onClick={toggleLink} className="nav-link link-light d-flex align-items-center"><RiGraduationCapLine className='me-2' />Alumni Profiles</a></li>
+            <li className="nav-item"><a href="#" onClick={toggleLink} className="nav-link link-light d-flex align-items-center"><RiSurveyLine className='me-2' />Questionaire Data</a></li>
             <li className="nav-item"><a href="#" onClick={toggleLink} className="nav-link link-light d-flex align-items-center"><GrLineChart className='me-2 line-chart' />Analytics</a></li>
-            <li className="nav-item"><a href="#" onClick={toggleLink} className="nav-link link-light d-flex align-items-center"><HiOutlineUserGroup className='icon me-2'/>Group Members</a></li>
+            <li className="nav-item"><a href="#" onClick={toggleLink} className="nav-link link-light d-flex align-items-center"><HiOutlineUserGroup className='me-2'/>Group Members</a></li>
+            <li className="nav-item"><a href="#" onClick={toggleLink} className="nav-link link-light d-flex align-items-center"><BiPrinter className='me-2'/>Print</a></li>
+
             <hr className='mt-auto'/>
-            <li className="nav-item"><a href="#" onClick={toggleLink} className="nav-link link-light d-flex align-items-center"><IoMdLogOut className='icon me-2'/>Log-out</a></li>
+            <li className="nav-item"><a href="#" onClick={toggleLink} className="nav-link link-light d-flex align-items-center"><IoMdLogOut className='me-2'/>Log-out</a></li>
 
           </ul>
         </aside>
