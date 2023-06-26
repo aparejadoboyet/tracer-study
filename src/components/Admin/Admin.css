@@ -8,6 +8,45 @@ hr {
     display: block;
 }
 
+.nav-link {
+    padding-left: 1rem;
+}
+
 .line-chart path {
     stroke: #ffffff!important;
+}
+
+.sidebar-collapsed, aside, .nav-link, svg {
+    transition: all ease-in-out .2s;
+}
+
+.sidebar-collapsed :is(.logo, .user-name, .user-details) {
+    display: none;
+}
+
+.sidebar-collapsed .nav-link {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    visibility: hidden;
+}
+
+.sidebar-collapsed svg {
+    visibility: visible!important;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.sidebar-collapsed .nav-link {
+    margin-left: 0!important;
+}
+
+.sidebar-collapsed ul hr {
+    width: 3rem;
+}
+
+.sidebar-collapsed > div:first-child {
+    margin: 1rem 0!important;
+    justify-content: center;
 }
