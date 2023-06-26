@@ -3,14 +3,14 @@
     height: 5rem;
     display: flex;
     justify-content: space-between;
-    padding-right: 5rem;
-    padding-left: 2rem;
+    padding-right: 5rem!important;
+    padding-left: 2rem!important;
     overflow: hidden;
     z-index: 12;
     align-items: center;
     color: white;
     position: fixed;
-    width: 100vw;
+    width: 100%;
 }
 
 .navbar .logo {
