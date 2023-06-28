@@ -9,7 +9,7 @@
     z-index: 12;
     align-items: center;
     color: white;
-    position: fixed;
+    position: fixed!important;
     width: 100%;
 }
 
