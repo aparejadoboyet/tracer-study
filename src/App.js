@@ -8,6 +8,7 @@ import Contact from './components/Screens/Contact/Contact';
 import { Outlet, Route, Routes } from "react-router-dom";
 import Admin from './components/Admin/Admin';
 import Footer from './components/Footer/Footer';
+import Print from './components/Admin/AdminComponents/Print';
 
 export default function App(props) {
   return (
@@ -21,7 +22,10 @@ export default function App(props) {
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
           </Route>
-          <Route path='/admin' element={<AdminLayout />}/>
+          <Route path='/admin/*' element={<AdminLayout />}>
+            <Route index element={<Admin />} />
+            <Route path='print' element={<Print />} />
+          </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
@@ -44,7 +48,9 @@ const RootLayout = () => {
 const AdminLayout = () => {
   return (
     <>
-      <Admin />
+      <div className='content'>
+        <Outlet />
+      </div>
     </>
   );
 };

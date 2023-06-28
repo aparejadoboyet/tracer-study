@@ -5,9 +5,11 @@ import tempImage from '../../../src/assets/img/abstract-user-flat-4.svg'
 import { HiOutlineHome, HiOutlineUserGroup, HiOutlineChartPie } from 'react-icons/hi'
 import { RiGraduationCapLine, RiSurveyLine } from 'react-icons/ri'
 import { BiPrinter } from 'react-icons/bi'
-import { GrInherit, GrLineChart } from 'react-icons/gr'
+import { GrLineChart } from 'react-icons/gr'
 import { IoMdLogOut } from 'react-icons/io'
 import './Admin.css'
+import { Link, Route } from 'react-router-dom'
+import PrintLink from './AdminComponents/Print'
 
 const Admin = () => {
 
@@ -59,7 +61,7 @@ const Admin = () => {
           <ul className="nav nav-pills flex-column h-100 mb-3 gap-2">
 
             <li className="nav-item">
-              <a href="#" onClick={toggleLink} className="active nav-link link-light d-flex align-items-center">
+              <a href="" onClick={toggleLink} className="active nav-link link-light d-flex align-items-center">
                 <HiOutlineHome />
                 <span>Dashboard</span>
               </a>
@@ -94,10 +96,10 @@ const Admin = () => {
             </li>
 
             <li className="nav-item">
-              <a href="#" onClick={toggleLink} className="nav-link link-light d-flex align-items-center">
+              <Link to="/admin/print" onClick={toggleLink} className="nav-link link-light d-flex align-items-center">
                 <BiPrinter />
                 <span>Print</span>
-              </a>
+              </Link>
             </li>
 
             <hr className='mt-auto'/>
