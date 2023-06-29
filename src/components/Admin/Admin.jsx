@@ -8,7 +8,7 @@ import { BiPrinter } from 'react-icons/bi'
 import { GrLineChart } from 'react-icons/gr'
 import { IoMdLogOut } from 'react-icons/io'
 import './Admin.css'
-import { Link, Route } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import PrintLink from './AdminComponents/Print'
 
 const Admin = () => {
@@ -29,7 +29,7 @@ const Admin = () => {
   return (
 
     <div className="admin container-fluid gx-0" style={{height:"100vh", width:"100%"}}>
-      <div className="nav-wrapper row container-fluid h-100 w-100">
+      <div className="nav-wrapper flex-column d-flex row container-fluid h-100 w-100">
 
         {/* SIDEBAR */}
 
@@ -61,10 +61,10 @@ const Admin = () => {
           <ul className="nav nav-pills flex-column h-100 mb-3 gap-2">
 
             <li className="nav-item">
-              <a href="" onClick={toggleLink} className="active nav-link link-light d-flex align-items-center">
+              <Link to="/admin" onClick={toggleLink} className="active nav-link link-light d-flex align-items-center">
                 <HiOutlineHome />
                 <span>Dashboard</span>
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
@@ -116,8 +116,8 @@ const Admin = () => {
 
         {/* MAIN */}
 
-        <main className="main">
-
+        <main className="main flex-shrink-1 h-100 w-100">
+          <Outlet />
         </main>
 
       </div>
